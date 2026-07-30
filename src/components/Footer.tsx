@@ -1,148 +1,113 @@
-import { FaGlobe, FaShareAlt } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
+import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import assets from "../assets/assets";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Logo & Description */}
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-xs font-bold">
-                R
-              </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-1  lg:grid-cols-5 gap-12">
+          <div className="lg:col-span-2">
+            <img
+              src={assets.Goldlogo}
+              alt="Rosco Footwear"
+              className="lg:w-35 w-30"
+            />
 
-              <h2 className="text-2xl font-semibold text-black">Rosco</h2>
-            </div>
-
-            <p className="mt-5 text-gray-500 text-sm leading-7 max-w-xs">
-              Refining the landscape of luxury footwear through intentional
-              design and unparalleled craftsmanship since 2024.
+            <p className="mt-8 max-w-sm text-black leading-5 text-sm">
+              Redefining modern luxury through heritage craftsmanship and
+              minimalist design.
             </p>
 
             <div className="flex items-center gap-4 mt-8">
-              <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition">
-                <FaGlobe size={16} />
-              </button>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-rosco hover:text-white transition"
+              >
+                <FaFacebookF size={14} />
+              </a>
 
-              <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition">
-                <FaShareAlt size={15} />
-              </button>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-rosco hover:text-white transition"
+              >
+                <FaInstagram size={14} />
+              </a>
 
-              <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition">
-                <FiMail size={16} />
-              </button>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-rosco hover:text-white transition"
+              >
+                <FaXTwitter size={14} />
+              </a>
             </div>
           </div>
 
-          {/* Shop */}
           <div>
-            <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-6">
-              Shop
-            </h3>
+            <h3 className="font-semibold text-black mb-6">Shop Categories</h3>
 
-            <ul className="space-y-4 text-gray-500">
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  Men
-                </a>
+            <ul className="space-y-3 text-black  text-sm">
+              <li className="hover:text-rosco">
+                <a href="#">Sneakers</a>
               </li>
-
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  Women
-                </a>
+              <li className="hover:text-rosco">
+                <a href="#">Boots</a>
               </li>
-
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  New Arrivals
-                </a>
+              <li className="hover:text-rosco">
+                <a href="#">Loafers</a>
               </li>
-
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  Accessories
-                </a>
+              <li className="hover:text-rosco">
+                <a href="#">Formal</a>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
           <div>
-            <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-6">
-              Support
-            </h3>
+            <h3 className="font-semibold text-black mb-6">Support</h3>
 
-            <ul className="space-y-4 text-gray-500">
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  Care Guide
-                </a>
+            <ul className="space-y-3 text-black text-sm">
+              <li className="hover:text-rosco">
+                <a href="#">Shipping Policy</a>
               </li>
-
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  Shipping
-                </a>
+              <li className="hover:text-rosco">
+                <a href="#">Returns & Exchanges</a>
               </li>
-
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  Returns
-                </a>
+              <li className="hover:text-rosco">
+                <a href="#">Size Guide</a>
               </li>
-
-              <li>
-                <a href="#" className="hover:text-black transition">
-                  Size Chart
-                </a>
+              <li className="hover:text-rosco">
+                <a href="#">Track Order</a>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact */}
           <div>
-            <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-5">
-              Join the Circle
-            </h3>
+            <h3 className="font-semibold text-black mb-6">Contact</h3>
 
-            <p className="text-gray-500 text-sm leading-6 mb-5">
-              Stay updated on limited collection drops and private events.
-            </p>
-
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Email address"
-                className="flex-1 h-11 rounded-lg bg-gray-100 px-4 text-sm outline-none focus:ring-2 focus:ring-black"
-              />
-
-              <button
-                type="submit"
-                className="h-11 px-7 rounded-lg bg-black text-white text-sm font-medium hover:bg-gray-900 transition"
-              >
-                Submit
-              </button>
-            </form>
+            <ul className="space-y-3 text-black text-sm">
+              <li className="hover:text-rosco">Gbomosho</li>
+              <li className="hover:text-rosco">aladet@.com</li>
+              <li className="hover:text-rosco">+234 8103007867</li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-5 text-sm text-gray-500">
-          <p>© 2024 Rosco Footwear. All rights reserved.</p>
+        <div className="mt-16 border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-sm text-gray-500">
+            © {new Date().getFullYear()} Rosco Footwear. All rights reserved.
+          </p>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            <a href="#" className="hover:text-black transition">
+          <div className="flex flex-wrap items-center gap-8 text-sm text-gray-500">
+            <a href="#" className="hover:text-rosco transition">
               Privacy Policy
             </a>
 
-            <a href="#" className="hover:text-black transition">
+            <a href="#" className="hover:text-rosco transition">
               Terms of Service
             </a>
 
-            <a href="#" className="hover:text-black transition">
-              Cookie Policy
+            <a href="#" className="hover:text-rosco transition">
+              Accessibility
             </a>
           </div>
         </div>
