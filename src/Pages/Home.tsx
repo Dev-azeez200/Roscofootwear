@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   const categories = [
@@ -160,7 +161,7 @@ const Home: React.FC = () => {
     <>
       <section
         className="relative h-[90vh] w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${assets.rosco})` }}
+        style={{ backgroundImage: `url(${assets.NewBack})` }}
       >
         <div className="absolute inset-0 bg-black/50" />
 
@@ -202,11 +203,12 @@ const Home: React.FC = () => {
               </h2>
             </div>
 
-            <div>
-              <button className="text-sm hover:underline flex justify-center items-center hover:bg-rosco py-1 px-3 hover:text-white rounded-xl">
-                View All Collection <IoIosArrowRoundForward />
+            <Link to="/Collections">
+              <button className="text-sm hover:underline flex items-center justify-center hover:bg-rosco py-1 px-3 hover:text-white rounded-xl transition-all duration-300">
+                View All Collection
+                <IoIosArrowRoundForward className="ml-1 text-lg" />
               </button>
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -228,9 +230,11 @@ const Home: React.FC = () => {
                 <div className="absolute bottom-5 left-5 text-white">
                   <h3 className="text-2xl font-semibold">{category.title}</h3>
 
-                  <button className="mt-2 text-sm cursor-pointer font-medium border-b border-white hover:text-rosco hover:border-rosco transition">
-                    Shop Now
-                  </button>
+                  <Link to="/Shop">
+                    <button className="mt-2 text-sm cursor-pointer font-medium border-b border-white hover:text-rosco hover:border-rosco transition">
+                      Shop Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -311,8 +315,7 @@ const Home: React.FC = () => {
       <section
         className="relative h-[50vh] lg:h-[75vh]  flex items-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1800')",
+          backgroundImage: `url(${assets.rosco})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
