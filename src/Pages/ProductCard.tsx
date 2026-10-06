@@ -1,6 +1,8 @@
 import { FiHeart, FiEye, FiShoppingBag } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import type { Product } from "../types/product";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 
 interface Props {
   product: Product;
@@ -8,7 +10,9 @@ interface Props {
 }
 
 const ProductCard = ({ product, grid }: Props) => {
+  const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
 
   if (!grid) {
     return (
@@ -30,7 +34,7 @@ const ProductCard = ({ product, grid }: Props) => {
 
           <p className="text-gray-500 mt-2">{product.category}</p>
 
-          <p className="mt-4 text-2xl font-semibold">${product.price}</p>
+          <p className="mt-4 text-2xl font-semibold">₦{product.price}</p>
 
           <button
             onClick={() => addToCart(product)}
@@ -59,11 +63,28 @@ const ProductCard = ({ product, grid }: Props) => {
         />
 
         <div className="absolute right-5 top-5 flex flex-col gap-3 opacity-0 transition duration-300 group-hover:opacity-100">
-          <button className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-rosco hover:text-white">
-            <FiHeart />
+          <button
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-rosco hover:text-white"
+            onClick={() => toggleWishlist(product)}
+            aria-label={
+              isInWishlist(product.id)
+                ? "Remove from wishlist"
+                : "Add to wishlist"
+            }
+          >
+            <FiHeart
+              className={
+                isInWishlist(product.id) ? "fill-current text-red-500" : ""
+              }
+            />
           </button>
 
-          <button className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-rosco hover:text-white">
+          {/* ViewProduct */}
+          <button
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-rosco hover:text-white"
+            onClick={() => navigate(`/viewproduct?product=${product.id}`)}
+            aria-label={`View ${product.name}`}
+          >
             <FiEye />
           </button>
 
@@ -86,7 +107,7 @@ const ProductCard = ({ product, grid }: Props) => {
         </h3>
 
         <p className="mt-1 text-xl font-semibold text-black">
-          ${product.price.toFixed(2)}
+          ₦{product.price.toFixed(2)}
         </p>
 
         <button

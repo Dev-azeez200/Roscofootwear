@@ -1,5 +1,6 @@
 import assets from "../assets/assets";
 import type { Product } from "../types/product";
+import womenProducts from "./womenProducts";
 
 const products: Product[] = [
   {
@@ -93,6 +94,7 @@ const products: Product[] = [
   //     material: "Recycled Canvas",
   //     sizes: [39, 40, 41, 42],
   //   },
+  ...womenProducts,
 ];
 
 export default products;

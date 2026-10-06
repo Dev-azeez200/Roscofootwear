@@ -1,5 +1,5 @@
 import { useCart } from "../context/CartContext";
-import { FiTrash2, FiShield } from "react-icons/fi";
+import { FiTrash2,  } from "react-icons/fi";
 
 const Cart = () => {
   const { cart, increaseQty, decreaseQty, removeFromCart } = useCart();
@@ -68,7 +68,7 @@ const Cart = () => {
                     </div>
 
                     <p className="text-lg font-medium whitespace-nowrap">
-                      ${item.price.toFixed(2)}
+                      ₦{item.price.toFixed(2)}
                     </p>
                   </div>
 
@@ -114,7 +114,7 @@ const Cart = () => {
             <div className="space-y-5 text-[15px]">
               <div className="flex justify-between">
                 <span className="text-gray-500">Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₦{subtotal.toFixed(2)}</span>
               </div>
 
               <div className="flex justify-between">
@@ -124,7 +124,7 @@ const Cart = () => {
 
               <div className="flex justify-between">
                 <span className="text-gray-500">Estimated Tax</span>
-                <span>${tax.toFixed(2)}</span>
+                <span>₦{tax.toFixed(2)}</span>
               </div>
             </div>
 
@@ -132,17 +132,12 @@ const Cart = () => {
 
             <div className="flex justify-between text-lg font-medium">
               <span>Total</span>
-              <span>${total.toFixed(2)}</span>
+              <span>₦{total.toFixed(2)}</span>
             </div>
 
             <button className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-black py-4 text-white transition hover:bg-rosco">
               Proceed to Checkout
             </button>
-
-            <div className="mt-6 flex items-center justify-center gap-2 text-[11px] uppercase tracking-[0.15em] text-gray-400">
-              <FiShield size={14} />
-              Secure Checkout Guaranteed
-            </div>
           </div>
         </div>
       </div>

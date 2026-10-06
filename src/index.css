@@ -6,9 +6,9 @@ body {
 }
 
 @theme {
-  --color-pryClr: #df791b;
-  --color-rosco: #D4AF37;
-  --color-rosco2: #060f1f;
+  --color-pryClr: #0f7a52;
+  --color-rosco: #d4af37;
+  --color-rosco2: #061b12;
 }
 
 * {

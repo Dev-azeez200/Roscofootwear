@@ -41,7 +41,7 @@ const Home: React.FC = () => {
       image: assets.Cross,
       category: "CLASSIC COLLECTION",
       name: "Signature Oxford",
-      price: "$285.00",
+      price: "₦285.00",
       favorite: true,
     },
     {
@@ -49,14 +49,14 @@ const Home: React.FC = () => {
       image: assets.Cross,
       category: "URBAN LUXURY",
       name: "Avenue Chelsea Boot",
-      price: "$340.00",
+      price: "₦340.00",
     },
     {
       id: 3,
       image: assets.Cross,
       category: "ESSENTIALS",
       name: "Urbanite High-Top",
-      price: "$195.00",
+      price: "₦195.00",
       badge: "NEW",
     },
     {
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
       image: assets.Cross,
       category: "GALA EDITION",
       name: "Velvet Sovereign Loafer",
-      price: "$410.00",
+      price: "₦410.00",
     },
   ];
 
@@ -98,28 +98,28 @@ const Home: React.FC = () => {
   const alade = [
     {
       name: "Marquis Monk Strap",
-      price: "$210.00",
+      price: "₦210.00",
       image: assets.Cross,
     },
     {
       name: "Ascend Trainer",
-      price: "$225.00",
+      price: "₦225.00",
       image: assets.Cross3,
     },
     {
       name: "Nomad Desert Boot",
-      price: "$275.00",
+      price: "₦275.00",
       image: assets.Cross4,
     },
 
     {
       name: "Nomad Desert Boot",
-      price: "$275.00",
+      price: "₦275.00",
       image: assets.Cross,
     },
     {
       name: "Nomad Desert Boot",
-      price: "$275.00",
+      price: "₦275.00",
       image: assets.Cross2,
     },
   ];
@@ -179,13 +179,19 @@ const Home: React.FC = () => {
             </p>
 
             <div className="mt-10 flex flex-col lg:flex-row  items-center justify-center gap-5">
-              <button className="group bg-white font-semibold text-black px-7 py-3 rounded-xl  shadow-xl hover:bg-[#D4AF37] hover:text-white transition-all duration-300">
+              <Link
+                to="/shop"
+                className="group bg-white font-semibold text-black px-7 py-3 rounded-xl  shadow-xl hover:bg-[#D4AF37] hover:text-white transition-all duration-300"
+              >
                 Shop Now
-              </button>
+              </Link>
 
-              <button className="px-7 py-3 rounded-xl border border-white/40 backdrop-blur-md font-semibold bg-white/10 text-white  hover:bg-white hover:text-black transition-all duration-300">
+              <Link
+                to="/collections"
+                className="px-7 py-3 rounded-xl border border-white/40 backdrop-blur-md font-semibold bg-white/10 text-white  hover:bg-white hover:text-black transition-all duration-300"
+              >
                 Explore Collection
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -338,9 +344,12 @@ const Home: React.FC = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <button className="px-7 py-3 rounded-xl bg-white text-black font-semibold hover:text-white hover:bg-rosco transition-all duration-300">
+              <Link
+                to="/collections"
+                className="inline-block rounded-xl bg-white px-7 py-3 font-semibold text-black transition-all duration-300 hover:bg-rosco hover:text-white"
+              >
                 Discover Collection
-              </button>
+              </Link>
             </div>
           </div>
         </div>

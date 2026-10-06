@@ -17,6 +17,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const features = [
@@ -122,9 +123,12 @@ const AboutUs = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-5 mt-10">
-              <button className="px-7 py-3 rounded-xl border border-white/40 backdrop-blur-md font-semibold bg-white/10 text-white  hover:bg-white hover:text-black transition-all duration-300">
+              <Link
+                to="/collections"
+                className="inline-block rounded-xl bg-white px-7 py-3 font-semibold text-black transition-all duration-300 hover:bg-rosco hover:text-white"
+              >
                 Explore Collection
-              </button>
+              </Link>
             </div>
           </div>
         </div>

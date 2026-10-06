@@ -3,19 +3,22 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { FiMenu, FiX, FiSearch, FiHeart, FiShoppingBag } from "react-icons/fi";
 import assets from "../assets/assets";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const { cart } = useCart();
+  const { wishlist } = useWishlist();
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const wishlistCount = wishlist.length;
 
   const navLinks = [
     { path: "/", name: "Home" },
     { path: "/aboutus", name: "About Us" },
     { path: "/shop", name: "Shop" },
-    { path: "/men", name: "Men" },
-    { path: "/women", name: "Women" },
+    // { path: "/men", name: "Men" },
+    // { path: "/women", name: "Women" },
     { path: "/collections", name: "Collections" },
   ];
 
@@ -65,8 +68,13 @@ const Navbar = () => {
               <FiSearch />
             </button>
 
-            <button className="text-2xl">
+            <button className="text-2xl" onClick={() => navigate("/wishlist")}>
               <FiHeart />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-2 -right-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-black px-1.5 text-[10px] font-semibold text-white">
+                  {wishlistCount}
+                </span>
+              )}
             </button>
 
             <button
@@ -88,8 +96,16 @@ const Navbar = () => {
             <FiSearch />
           </button>
 
-          <button className="text-xl hover:text-rosco transition">
+          <button
+            className="relative text-xl hover:text-rosco transition"
+            onClick={() => navigate("/wishlist")}
+          >
             <FiHeart />
+            {wishlistCount > 0 && (
+              <span className="absolute -top-2 -right-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-black px-1.5 text-[10px] font-semibold text-white">
+                {wishlistCount}
+              </span>
+            )}
           </button>
 
           <button

@@ -23,6 +23,7 @@ const categories = [
   "Heritage Loafers",
   "Modern Boots",
   "Resort Sandals",
+  "Women",
 ];
 
 const sizes = [39, 40, 41, 42, 43, 44, 45];
@@ -50,7 +51,13 @@ const colors = [
   },
 ];
 
-const materials = ["Full Grain Leather", "Suede", "Recycled Canvas"];
+const materials = [
+  "Full Grain Leather",
+  "Suede",
+  "Recycled Canvas",
+  "Leather",
+  "Canvas",
+];
 
 const FilterSidebar = ({
   selectedCategory,
@@ -93,7 +100,7 @@ const FilterSidebar = ({
     setSelectedSizes([]);
     setSelectedColors([]);
     setSelectedMaterials([]);
-    setMaxPrice(1000);
+    setMaxPrice(100000);
   };
 
   return (
@@ -162,7 +169,7 @@ const FilterSidebar = ({
         <input
           type="range"
           min={100}
-          max={1000}
+          max={100000}
           step={10}
           value={maxPrice}
           onChange={(e) => setMaxPrice(Number(e.target.value))}
@@ -170,9 +177,9 @@ const FilterSidebar = ({
         />
 
         <div className="flex justify-between mt-2 text-xs text-gray-500">
-          <span>$100</span>
+          <span>₦100</span>
 
-          <span>${maxPrice}</span>
+          <span>₦{maxPrice}</span>
         </div>
       </div>
 
